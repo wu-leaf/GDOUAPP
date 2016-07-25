@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen
+    android:layout="@layout/preference_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/title_activity_setting">
+    <PreferenceCategory
+        android:layout="@layout/preference_category_widget"
+        android:title="自定义（重启生效）">
+
+        <CheckBoxPreference
+            android:key="checkbox_all"
+            android:layout="@layout/preference_item"
+            android:title="列表页加载图片"
+            android:summaryOn="移动网络下加载"
+            android:summaryOff="WIFI下自动加载(默认)"
+            android:defaultValue="false"/>
+
+        <CheckBoxPreference
+            android:key="checkbox_part"
+            android:layout="@layout/preference_item"
+            android:title="详情页加载图片"
+            android:summaryOff="不加载"
+            android:summaryOn="加载(默认)"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/preference_category_widget"
+        android:title="帮助">
+        <Preference
+            android:layout="@layout/preference_item"
+            android:summary="当前版本：1.1beta"
+            android:title="内测/更新页面">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://fir.im/gdouapp"/>
+        </Preference>
+
+        <Preference
+            android:layout="@layout/preference_item"
+            android:summary="我的微博：http://weibo.com/brucevan "
+            android:title="作者：brucevan">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://weibo.com/brucevan"/>
+        </Preference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

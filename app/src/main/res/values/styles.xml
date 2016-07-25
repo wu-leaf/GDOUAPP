@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <style name="Theme.Design" parent="Base.Theme.Design"></style>
+
+    <style name="Base.Theme.Design" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#039be5</item>
+        <item name="colorPrimaryDark">#0277bd</item>
+        <item name="colorAccent">#FFFFFF</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="Widget.CardContent" parent="android:Widget">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="SettingTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#039be5</item>
+        <item name="colorPrimaryDark">#0277bd</item>
+        <item name="colorAccent">#039be5</item>
+    </style>
+
+    <style name="Theme.Design.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Design.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
