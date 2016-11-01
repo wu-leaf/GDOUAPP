@@ -1,4 +1,4 @@
-package com.dev_fdm.gdouapp.app;
+package com.dev_fdm.gdouapp.view;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -16,8 +16,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.dev_fdm.gdouapp.R;
-import com.dev_fdm.gdouapp.spider.NewsItem;
-import com.dev_fdm.gdouapp.spider.NewsItemBiz;
+import com.dev_fdm.gdouapp.model.NewsItem;
+import com.dev_fdm.gdouapp.model.NewsItemBiz;
 
 /**
  * 新闻详细内容
@@ -25,7 +25,7 @@ import com.dev_fdm.gdouapp.spider.NewsItemBiz;
  */
 public class NewsDetailActivity extends AppCompatActivity {
 
-    private String mNewsUrl;
+    private String mNewsUrl;   //传过来新闻的URL
     private String date;
     private String readNo;
     private String title;

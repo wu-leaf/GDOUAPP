@@ -1,4 +1,4 @@
-package com.dev_fdm.gdouapp.app;
+package com.dev_fdm.gdouapp.view;
 
 import android.annotation.TargetApi;
 import android.app.FragmentManager;

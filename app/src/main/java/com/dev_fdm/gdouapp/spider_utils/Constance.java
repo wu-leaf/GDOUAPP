@@ -1,4 +1,4 @@
-package com.dev_fdm.gdouapp.spider;
+package com.dev_fdm.gdouapp.spider_utils;
 
 /**
  * 新闻类型常量

@@ -1,4 +1,4 @@
-package com.dev_fdm.gdouapp.spider;
+package com.dev_fdm.gdouapp.spider_utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

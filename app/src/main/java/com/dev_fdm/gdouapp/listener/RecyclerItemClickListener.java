@@ -1,4 +1,4 @@
-package com.dev_fdm.gdouapp.app;
+package com.dev_fdm.gdouapp.listener;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

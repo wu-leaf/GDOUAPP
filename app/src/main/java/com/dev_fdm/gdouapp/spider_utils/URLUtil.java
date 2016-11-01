@@ -1,4 +1,4 @@
-package com.dev_fdm.gdouapp.spider;
+package com.dev_fdm.gdouapp.spider_utils;
 
 /**
  * 获取新闻栏目链接工具类

@@ -1,19 +1,19 @@
-package com.dev_fdm.gdouapp.spider;
+package com.dev_fdm.gdouapp.model;
 
 /**
- * 新闻实体类
+ *                新闻实体类
  *Created by Dev_fdm on 2015.
  */
 public class NewsItem {
 
     private int id;
-    private String link;//文章链接
-    private String imgLink;// 图片链接
-    private String title;//标题
-    private String date;//发布时间
-    private String readNo;//阅读数
-    private String content;//文章内容
-    private int newsType;//文章类型
+    private String link;          //文章链接
+    private String imgLink;       // 图片链接
+    private String title;         //标题
+    private String date;          //发布时间
+    private String readNo;        //阅读数
+    private String content;       //文章内容
+    private int newsType;         //文章类型
 
     public int getId() {
         return id;

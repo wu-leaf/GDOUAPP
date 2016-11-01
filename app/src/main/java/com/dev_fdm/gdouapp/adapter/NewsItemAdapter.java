@@ -1,4 +1,4 @@
-package com.dev_fdm.gdouapp.app;
+package com.dev_fdm.gdouapp.adapter;
 
 
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dev_fdm.gdouapp.R;
-import com.dev_fdm.gdouapp.spider.NewsItem;
+import com.dev_fdm.gdouapp.model.NewsItem;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -65,7 +65,8 @@ public class NewsItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
 
         if (viewType==TYPE_ITEM){
-            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.news_item, viewGroup, false);
+            View view = LayoutInflater.from(viewGroup.getContext())
+                    .inflate(R.layout.news_item, viewGroup, false);
 
             ImageView mImg = (ImageView) view.findViewById(R.id.news_item_img);
             TextView mTitle = (TextView) view.findViewById(R.id.news_item_title);

@@ -1,4 +1,4 @@
-package com.dev_fdm.gdouapp.app;
+package com.dev_fdm.gdouapp.spider_utils;
 
 import android.annotation.SuppressLint;
 import android.app.Application;

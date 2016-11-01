@@ -1,4 +1,4 @@
-package com.dev_fdm.gdouapp.spider;
+package com.dev_fdm.gdouapp.spider_utils;
 
 /**
  * 自定义公共异常类

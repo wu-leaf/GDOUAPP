@@ -1,4 +1,4 @@
-package com.dev_fdm.gdouapp.app;
+package com.dev_fdm.gdouapp.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.dev_fdm.gdouapp.R;
-import com.dev_fdm.gdouapp.spider.Constance;
+import com.dev_fdm.gdouapp.spider_utils.Constance;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,25 +40,26 @@ public class MainActivity extends AppCompatActivity {
 
         final ActionBar ab = getSupportActionBar();
         assert ab != null;
-        ab.setHomeAsUpIndicator(R.drawable.ic_menu);
-        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setHomeAsUpIndicator(R.drawable.ic_menu);//加上 左上角的  三横  图片
+        ab.setDisplayHomeAsUpEnabled(true);         //设置允许显示
 
-
+        //整个主布局 由左侧侧滑菜单+中间TabLayout+ViewPager组成
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+        //NavigationView是左侧侧滑菜单
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         if (navigationView != null) {
-            setupDrawerContent(navigationView);
+            setupDrawerContent(navigationView);//设置左侧导航抽屉
         }
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         if (viewPager != null) {
-            setupViewPager(viewPager);
+            setupViewPager(viewPager);         //设置ViewPager
         }
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);  //获取TabLayout
         assert viewPager != null;
-        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setupWithViewPager(viewPager);//根据viewPager设置tablayout
     }
 
     @Override
@@ -131,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
         public void addFragment(Fragment fragment, String title) {
             mFragments.add(fragment);
-            mFragmentTitles.add(title);
+            mFragmentTitles.add(title);//设置Fragment的标签
         }
 
         @Override

@@ -1,7 +1,11 @@
-package com.dev_fdm.gdouapp.spider;
+package com.dev_fdm.gdouapp.model;
 
-import com.dev_fdm.gdouapp.app.GetSettings;
-import com.dev_fdm.gdouapp.app.MyApplication;
+import com.dev_fdm.gdouapp.spider_utils.CommonException;
+import com.dev_fdm.gdouapp.spider_utils.DataUtil;
+import com.dev_fdm.gdouapp.spider_utils.NetWorkUtil;
+import com.dev_fdm.gdouapp.spider_utils.URLUtil;
+import com.dev_fdm.gdouapp.spider_utils.GetSettings;
+import com.dev_fdm.gdouapp.spider_utils.MyApplication;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -22,6 +26,7 @@ public class NewsItemBiz {
     /**
      * 综合要闻、校务公开、科教动态、校园快讯
      */
+    //解析获得新闻子 Items
     public List<NewsItem> getNewsItems(int newsType)
             throws CommonException {
         String urlStr = URLUtil.generateUrl(newsType);
@@ -31,6 +36,7 @@ public class NewsItemBiz {
         List<NewsItem> newsItems = new ArrayList<>();
         NewsItem newsItem = null;
 
+        //解析HTML网页
         Document doc = Jsoup.parse(htmlStr);
         Elements ai = doc.select("div.mar_10");
         Elements units = ai.select("li");
@@ -89,7 +95,7 @@ public class NewsItemBiz {
 
     }
 
-
+    //解析获得新闻详情内容
     public NewsItem getNewsContent(String url) throws Exception {
 
         NewsItem newsItem = new NewsItem();

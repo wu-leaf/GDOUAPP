@@ -1,4 +1,4 @@
-package com.dev_fdm.gdouapp.app;
+package com.dev_fdm.gdouapp.view;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
@@ -20,8 +20,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dev_fdm.gdouapp.R;
-import com.dev_fdm.gdouapp.spider.NewsItem;
-import com.dev_fdm.gdouapp.spider.NewsItemBiz;
+import com.dev_fdm.gdouapp.adapter.NewsItemAdapter;
+import com.dev_fdm.gdouapp.listener.RecyclerItemClickListener;
+import com.dev_fdm.gdouapp.model.NewsItem;
+import com.dev_fdm.gdouapp.model.NewsItemBiz;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,12 +69,9 @@ public class NewsListFragment extends Fragment implements SwipeRefreshLayout.OnR
     }
 
     private void init(final View view) {
-
-
         Activity parentActivity = getActivity();
 
         mSwipeRefreshWidget = (SwipeRefreshLayout)view.findViewById(R.id.swipe_refresh_widget);
-
         mSwipeRefreshWidget.setColorScheme(R.color.light_blue_600, R.color.green_300, R.color.orange_600);
         mSwipeRefreshWidget.setOnRefreshListener(this);
 
@@ -80,6 +79,7 @@ public class NewsListFragment extends Fragment implements SwipeRefreshLayout.OnR
         mSwipeRefreshWidget.setProgressViewOffset(false, 0, (int) TypedValue
                 .applyDimension(TypedValue.COMPLEX_UNIT_DIP, 24, getResources()
                         .getDisplayMetrics()));
+
         //mSwipeRefreshWidget.setRefreshing(true);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
@@ -108,12 +108,12 @@ public class NewsListFragment extends Fragment implements SwipeRefreshLayout.OnR
             }
         });
 
-        mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getActivity(), new RecyclerItemClickListener.OnItemClickListener() {
+        mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getActivity(),
+                        new RecyclerItemClickListener.OnItemClickListener() {
+
                     @Override
                     public void onItemClick(View view, int position) {
-
                         NewsItem item = mAdapter.getmNewsList().get(position);
-
                         //打开显示新闻内容的Activity,把新闻的url作为参数传过去
                         Intent startActivityIntent = new Intent(getActivity(), NewsDetailActivity.class);
 
